@@ -329,11 +329,11 @@ require("neo-tree").setup({
 })
 
 -- Highlight groups
-vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#B58FFF" })
+vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = "#8CAAEE" })
 vim.api.nvim_set_hl(0, "IlluminatedWordText", { underline = true })
 vim.api.nvim_set_hl(0, "IlluminatedWordRead", { underline = true })
 vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { underline = true })
-vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#B58FFF" })
+vim.api.nvim_set_hl(0, "FloatBorder", { fg = "#8CAAEE" })
 
 -- LSP configuration
 vim.diagnostic.config({
