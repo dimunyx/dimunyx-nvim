@@ -402,15 +402,27 @@ vim.lsp.config('harper-ls', {
 })
 
 vim.lsp.enable({
-        'clangd',
-        'pyright',
-        'bashls',
-        'html',
-        'cssls',
-        'nil_ls',
-        'qmlls',
-        'harper_ls',
+	'clangd',
+	'pyright',
+	'bashls',
+	'html',
+	'cssls',
+	'nil_ls',
+	'qmlls',
+	'harper_ls',
 })
+
+-- Disable semantic tokens for qmlls (server sends malformed token data,
+-- causing "attempt to compare number with nil" in semantic_tokens.lua)
+vim.api.nvim_create_autocmd('LspAttach', {
+	callback = function(args)
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client and client.name == 'qmlls' then
+			vim.lsp.semantic_tokens.enable(false, { bufnr = args.buf })
+		end
+	end,
+})
+
 
 -- Vim settings
 vim.opt.number = true
