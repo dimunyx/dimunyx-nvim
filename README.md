@@ -1,5 +1,5 @@
 # dimunyx-nvim
-a good neovim with much plugins and LSP autocompletes
+A good neovim with much plugins and LSP autocompletes
 
 Screenshots
 
